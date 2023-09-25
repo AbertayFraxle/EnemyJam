@@ -23,4 +23,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+protected:
+
+	UPROPERTY()
+	ACameraActor* camera1;
+
+	UPROPERTY()
+	ACameraActor* camera2;
+
 };
