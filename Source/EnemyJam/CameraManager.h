@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
+#include "Camera/CameraActor.h"
+#include "Kismet/GameplayStatics.h"
 #include "CameraManager.generated.h"
 
 UCLASS()
@@ -25,10 +28,10 @@ public:
 
 protected:
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ACameraActor* camera1;
 
-	UPROPERTY()
-	ACameraActor* camera2;
+	APlayerController* controller;
+
 
 };
