@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/Character.h"
+#include "EnhancedInputSubsystems.h"
+#include "InputActionValue.h"
 #include "Camera/CameraActor.h"
 #include "Kismet/GameplayStatics.h"
 #include "CameraManager.generated.h"
@@ -29,9 +31,19 @@ public:
 protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	ACameraActor* camera1;
+	TSubclassOf<ACameraActor> camera;
+
+	TArray<AActor*> FoundActors;
 
 	APlayerController* controller;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputMappingContext* playerMappingContext;
 
+	//create the variables
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* moveAction;
+
+	float timer;
+	int selection;
 };
