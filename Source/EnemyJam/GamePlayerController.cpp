@@ -33,24 +33,24 @@ void AGamePlayerController::SetupInputComponent()
 
 	//map changeAction to E for value of 1 and Q for value of -1
 
-	mapping = mappingContext->MapKey(changeAction, EKeys::W);
+	FEnhancedActionKeyMapping& mapping1 = mappingContext->MapKey(moveAction, EKeys::W);
 	UInputModifierSwizzleAxis* swizzle = NewObject<UInputModifierSwizzleAxis>(this);
 	swizzle->Order = EInputAxisSwizzle::YXZ;
 
-	mapping.Modifiers.Add(swizzle);
+	mapping1.Modifiers.Add(swizzle);
 
-	mapping = mappingContext->MapKey(changeAction, EKeys::S);
-	mapping.Modifiers.Add(swizzle);
-	mapping.Modifiers.Add(negate);
+	FEnhancedActionKeyMapping& mapping2 = mappingContext->MapKey(moveAction, EKeys::S);
+	mapping2.Modifiers.Add(swizzle);
+	mapping2.Modifiers.Add(negate);
 
-	mapping = mappingContext->MapKey(changeAction, EKeys::A);
+	FEnhancedActionKeyMapping& mapping3 = mappingContext->MapKey(moveAction, EKeys::A);
 	swizzle->Order = EInputAxisSwizzle::XZY;
-	mapping.Modifiers.Add(swizzle);
-	mapping.Modifiers.Add(negate);
+	mapping3.Modifiers.Add(swizzle);
+	mapping3.Modifiers.Add(negate);
 
-	mapping = mappingContext->MapKey(changeAction, EKeys::D);
+	mapping3 = mappingContext->MapKey(moveAction, EKeys::D);
 
-
+	
 
 
 }
