@@ -11,7 +11,7 @@ AGuard::AGuard()
 
 	AAIController* controller = NewObject<AAIController>();
 
-	controller.
+	controller.r
 
 }
 

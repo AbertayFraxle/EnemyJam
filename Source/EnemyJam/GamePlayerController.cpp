@@ -29,7 +29,7 @@ void AGamePlayerController::SetupInputComponent()
 	
 
 
-	changeAction->ValueType = EInputActionValueType::Axis3D;
+	moveAction->ValueType = EInputActionValueType::Axis3D;
 
 	//map changeAction to E for value of 1 and Q for value of -1
 
@@ -44,11 +44,15 @@ void AGamePlayerController::SetupInputComponent()
 	mapping2.Modifiers.Add(negate);
 
 	FEnhancedActionKeyMapping& mapping3 = mappingContext->MapKey(moveAction, EKeys::A);
-	swizzle->Order = EInputAxisSwizzle::XZY;
-	mapping3.Modifiers.Add(swizzle);
+
+	UInputModifierSwizzleAxis* swizzle2 = NewObject<UInputModifierSwizzleAxis>(this);
+	swizzle2->Order = EInputAxisSwizzle::XZY;
+
+
+	mapping3.Modifiers.Add(swizzle2);
 	mapping3.Modifiers.Add(negate);
 
-	mapping3 = mappingContext->MapKey(moveAction, EKeys::D);
+	mappingContext->MapKey(moveAction, EKeys::D);
 
 	
 
