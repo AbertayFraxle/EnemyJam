@@ -9,9 +9,9 @@ AGuard::AGuard()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	AAIController* controller = NewObject<AAIController>();
+//	AAIController* controller = NewObject<AAIController>();
 
-	controller.r
+	//controller.r
 
 }
 
