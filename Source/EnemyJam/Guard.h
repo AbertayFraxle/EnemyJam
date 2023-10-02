@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "AIController.h"
 #include "Guard.generated.h"
 
 UCLASS()
